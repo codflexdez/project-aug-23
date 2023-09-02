@@ -1,0 +1,72 @@
+[
+  {
+    "id": "28782855",
+    "name": "Andrien Bralton",
+    "contacts": {
+      "email": "a_bralton@gmail.com",
+      "phone": "+1 514 917 8679"
+    },
+    "sentiment": "Positive",
+    "score": 4.65,
+    "confirmation": "Confirmation",
+    "checkIn": "2022-12-29",
+    "checkOut": "2023-01-02",
+    "timestamp": "2023-01-02 04:34"
+  },
+  {
+    "id": "28792857",
+    "name": "Brian Dash",
+    "contacts": {
+      "email": "bryan.dash@gmail.com",
+      "phone": "+1 438 817 7579"
+    },
+    "sentiment": "Very Positive",
+    "score": 5,
+    "confirmation": "Confirmation",
+    "checkIn": "2022-12-29",
+    "checkOut": "2023-01-02",
+    "timestamp": "2023-01-02 04:34"
+  },
+  {
+    "id": "28782755",
+    "name": "Tia Davis",
+    "contacts": {
+      "email": "davistia@gmail.com",
+      "phone": "+1 514 784 5744"
+    },
+    "sentiment": "Positive",
+    "score": 4.5,
+    "confirmation": "Reminder",
+    "checkIn": "2022-12-29",
+    "checkOut": "2023-01-02",
+    "timestamp": "2023-01-02 04:34"
+  },
+  {
+    "id": "287835544",
+    "name": "Brandon Garcia",
+    "contacts": {
+      "email": "garciab@gmail.com",
+      "phone": "+1 514 455 2025"
+    },
+    "sentiment": "Neutral",
+    "score": 3.125,
+    "confirmation": "Reminder",
+    "checkIn": "2022-12-29",
+    "checkOut": "2023-01-02",
+    "timestamp": "2023-01-02 04:34"
+  },
+  {
+    "id": "287954575",
+    "name": "Heath Hutchens",
+    "contacts": {
+      "email": "hheath@gmail.com",
+      "phone": "+1 514 425 8913"
+    },
+    "sentiment": "Negative",
+    "score": 2.3,
+    "confirmation": "Confirmation",
+    "checkIn": "2022-12-29",
+    "checkOut": "2023-01-02",
+    "timestamp": "2023-01-02 04:34"
+  }
+]
