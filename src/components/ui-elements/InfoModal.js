@@ -38,6 +38,13 @@ const InfoModal = ({ isInfoOpen, onClose }) => {
     },
     span: {
       color: "gray",
+    },
+    modal: {
+      opacity: "0",
+      transition: "2s ease-in-out"
+    },
+    modalOpen: {
+      opacity: "1"
     }
     
   };
@@ -48,6 +55,7 @@ const InfoModal = ({ isInfoOpen, onClose }) => {
         id="info"
         className={`modal ${isInfoOpen ? "" : "hidden"}`}
         aria-label="information"
+        style={isInfoOpen ? styles.modalOpen : styles.modal}
       >
         <img
           src={process.env.PUBLIC_URL + "/img/close.png"}
