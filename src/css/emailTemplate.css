@@ -216,7 +216,7 @@
 .template>aside button:hover,
 .template>aside button:focus {
     color: var(--text-color_accent);
-    line-height: 240%;
+    line-height: 245%;
     border-bottom: 3px solid var(--text-color_accent);
 }
 

@@ -10,10 +10,13 @@ const SurveyList = ({
   const url = "";
   const styles = {
     span: {
-      fontSize: "medium",
+      fontSize: "16px",
     },
     dropdown: {
       position: "relative",
+    },
+    blockSz: {
+      width: "20px",
     },
   };
 
@@ -23,12 +26,10 @@ const SurveyList = ({
     e.preventDefault();
     if (id === kababId) {
       setKabab(null);
-    }
-    else {
+    } else {
       setKabab(id);
     }
   };
-
 
   return (
     <>
@@ -64,7 +65,7 @@ const SurveyList = ({
           <div>{item.timestamp}</div>
 
           <div>
-            <Link to="../survey-response" className="show-content">
+            <Link to="../survey-response" className="show-content" style={styles.blockSz}>
               <img src={process.env.PUBLIC_URL + "/img/show.png"} alt="show" />
             </Link>
             <Link to={url} className="export-content">
@@ -95,6 +96,7 @@ const SurveyList = ({
                 <img
                   src={process.env.PUBLIC_URL + "/img/dots.png"}
                   alt="menu-dropdown"
+                  style={styles.blockSz}
                 />
               </Link>
               {kababId === item.id && (
@@ -103,8 +105,12 @@ const SurveyList = ({
                   data-active="false"
                   aria-label="dropdown"
                 >
-                  <Link to="#/needReply" onClick={(e) => showKabab(e)}>Need Reply</Link>
-                  <Link to="#/editOptions" onClick={(e) => showKabab(e)}>Print</Link>
+                  <Link to="#/needReply" onClick={(e) => showKabab(e)}>
+                    Need Reply
+                  </Link>
+                  <Link to="#/editOptions" onClick={(e) => showKabab(e)}>
+                    Print
+                  </Link>
                 </div>
               )}
             </div>

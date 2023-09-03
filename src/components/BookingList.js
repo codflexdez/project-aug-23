@@ -6,7 +6,11 @@ const BookingList = ({ data, handleSelfCheck, individualCheckboxes, onOpen, hide
 
   const url = "";
 
-
+  const styles = {
+     blockSz: {
+       width: '20px'
+     }
+  }
 
   return (
     <>
@@ -38,18 +42,18 @@ const BookingList = ({ data, handleSelfCheck, individualCheckboxes, onOpen, hide
           </div>
           <div>{item.timestamp}</div>
           <div>
-            <a href={url} className="open-info">
+            <Link to={url} className="open-info" style={styles.blockSz}>
               <img src={process.env.PUBLIC_URL + "/img/info.png"} alt="info" onClick={onOpen}/>
-            </a>
-            <Link to="../template" className="show-content">
+            </Link>
+            <Link to="../template" className="show-content" style={styles.blockSz}>
               <img src={process.env.PUBLIC_URL + "/img/show.png"} alt="show" />
             </Link>
-            <a href={url} className="delete-content" onClick={(e) => {
+            <Link to={url} className="delete-content" onClick={(e) => {
                 e.preventDefault();
                 hideRow(item.id);
               }}>
               <span className="fa fa-trash-o" alt="delete"></span>
-            </a>
+            </Link>
           </div>
         </li>
       ))}
