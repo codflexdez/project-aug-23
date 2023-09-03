@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import GmsSearch from "./ui-elements/GmsSearch";
 
 const HomePage = () => {
- 
+  const [selProfile, setSelProfile] = useState(null);
+
+  const activeProfile = (e, id) => {
+    e.preventDefault();
+    if (selProfile === id) {
+      setSelProfile(null);
+    } else {
+      setSelProfile(id);
+    }
+  };
+
   return (
     <>
       {/* Your main content goes here  */}
@@ -9,25 +20,9 @@ const HomePage = () => {
         <h2>Amadeus Hotels & Resort</h2>
         <div>
           <input type="search" placeholder="Search" aria-label="Search" />
-          <aside>
-            <span>
-              Searching: <span className="profile-name">All Profiles</span>
-            </span>
-            <i className="fa fa-caret-down" aria-label="dropdown"></i>
 
-            <div
-              id="pofiles"
-              className="profiles-dropdown"
-              aria-label="dropdown"
-            >
-              <a href="/allProfiles">All Profiles</a>
-              <a href="/guestProperty">Guest on Property</a>
-              <a href="/reports">Reports</a>
-              <a href="/emailCampaign">Email Campaign</a>
-              <a href="/surveys">Surveys</a>
-              <a href="/surveyResult">Survey Result</a>
-            </div>
-          </aside>
+          {/* search within profiles goes hear*/}
+          <GmsSearch onActive={activeProfile} selProfile={selProfile} />
         </div>
         <section>
           <div>

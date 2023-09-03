@@ -255,7 +255,8 @@
 }
 
 
-.main-content div > a:hover {
+.main-content div > a:hover,
+.selected {
   background-color: var(--bg-link_hover);
 }
 
