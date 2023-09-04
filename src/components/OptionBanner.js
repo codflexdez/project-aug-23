@@ -6,8 +6,10 @@ const OptionBanner = ({ checkboxCount, deleteEntries, location }) => {
   const styles = {
     button: {
       display: "flex",
+      // flexDirection: "row",
       alignItems: "center",
-      letterSpacing: "1px",
+      letterSpacing: "0.5px",
+      alignSelf: "baseline"
     },
   };
 

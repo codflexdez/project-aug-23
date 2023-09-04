@@ -77,11 +77,11 @@ const GmsTemplate = ({onLogout}) => {
   return (
       <>
       <header className="header">
-        <div>
-          <img
+        <div style={{alignItems: "end"}}>
+          <Link to="/gms"><img 
             src={process.env.PUBLIC_URL + "/img/Amadeus-logo-wh.png"}
             alt="amadeus-hospitality-logo"
-          />
+          /></Link>
           <span>Guest Management Solutions</span>
         </div>
         <div>

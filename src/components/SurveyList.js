@@ -36,6 +36,7 @@ const SurveyList = ({
       {data.map((item) => (
         <li
           className={`item-container ${item.isHidden ? "hidden" : ""}`}
+          style={individualCheckboxes[item.id] ? {backgroundColor: "var(--bg-color_accent)"} : {}}
           key={item.id}
         >
           <div>

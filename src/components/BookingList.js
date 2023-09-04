@@ -1,21 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BookingList = ({ data, handleSelfCheck, individualCheckboxes, onOpen, hideRow }) => {
-  
-
+const BookingList = ({
+  data,
+  handleSelfCheck,
+  individualCheckboxes,
+  onOpen,
+  hideRow,
+}) => {
   const url = "";
 
   const styles = {
-     blockSz: {
-       width: '20px'
-     }
-  }
+    blockSz: {
+      width: "20px",
+    },
+  };
 
   return (
     <>
       {data.map((item) => (
-        <li className={`item-container ${item.isHidden ? "hidden" : ""}`} key={item.id}>
+        <li
+          className={`item-container ${item.isHidden ? "hidden" : ""}`}
+          key={item.id}
+          style={
+            individualCheckboxes[item.id]
+              ? { backgroundColor: "var(--bg-color_accent)" }
+              : {}
+          }
+        >
           <div>
             <input
               id={item.id}
@@ -43,15 +55,27 @@ const BookingList = ({ data, handleSelfCheck, individualCheckboxes, onOpen, hide
           <div>{item.timestamp}</div>
           <div>
             <Link to={url} className="open-info" style={styles.blockSz}>
-              <img src={process.env.PUBLIC_URL + "/img/info.png"} alt="info" onClick={onOpen}/>
+              <img
+                src={process.env.PUBLIC_URL + "/img/info.png"}
+                alt="info"
+                onClick={onOpen}
+              />
             </Link>
-            <Link to="../template" className="show-content" style={styles.blockSz}>
+            <Link
+              to="../template"
+              className="show-content"
+              style={styles.blockSz}
+            >
               <img src={process.env.PUBLIC_URL + "/img/show.png"} alt="show" />
             </Link>
-            <Link to={url} className="delete-content" onClick={(e) => {
+            <Link
+              to={url}
+              className="delete-content"
+              onClick={(e) => {
                 e.preventDefault();
                 hideRow(item.id);
-              }}>
+              }}
+            >
               <span className="fa fa-trash-o" alt="delete"></span>
             </Link>
           </div>

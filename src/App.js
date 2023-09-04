@@ -8,6 +8,12 @@ import HomePage from "./components/HomePage";
 import data from "./data.json";
 import EmailTemplate from "./components/EmailTemplate";
 import SurveyRespons from "./components/SurveyResponse.js";
+import ProfilesPage from "./components/ProfilesPage";
+import EmailCenterPage from "./components/EmailCenterPage";
+import ReportsPage from "./components/ReportsPage";
+import FormCenterPage from "./components/FormCenterPage";
+import WorkflowPage from "./components/WorkflowPage";
+import LearningCenterPage from "./components/LearningCenterPage";
 
 
 const App = () => {
@@ -165,6 +171,12 @@ const App = () => {
           />
           <Route path="template" element={<EmailTemplate />} />
           <Route path="survey-response" element={<SurveyRespons />} />
+          <Route path="profiles" element={<ProfilesPage />} />
+          <Route path="email-center" element={<EmailCenterPage />} />
+          <Route path="reports" element={<ReportsPage />} />
+          <Route path="form-center" element={<FormCenterPage />} />
+          <Route path="workflow" element={<WorkflowPage />} />
+          <Route path="learning-center" element={<LearningCenterPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
