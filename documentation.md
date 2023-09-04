@@ -13,6 +13,8 @@
 
 ### Webpack configuration
 * Link: https://www.knowledgehut.com/blog/web-development/create-react-app-webpack#why-should-you-use-webpack?%C2%A0
+* https://aglowiditsolutions.com/blog/react-webpack/
+* https://jsramblings.com/creating-a-react-app-with-webpack/
 
 * 1 Required Packages:
 
