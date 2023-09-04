@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 
-const GmsTemplate = ({onLogout}) => {
+const GmsTemplate = ({onLogout, resetState}) => {
 
   
   let url = "";
@@ -85,7 +85,7 @@ const GmsTemplate = ({onLogout}) => {
           <span>Guest Management Solutions</span>
         </div>
         <div>
-          <span>Amadeus</span>
+          <span onClick={resetState} style={{cursor: "pointer"}}>Amadeus</span>
           <i className="fa fa-angle-down fa-lg"></i>
           <a href={url} onClick={onLogout}>John Dow</a>
         </div>

@@ -113,6 +113,7 @@ const App = () => {
     localStorage.removeItem("isLoggedIn");
   };
 
+ 
   return (
     <BrowserRouter>
       <Routes>
@@ -131,7 +132,7 @@ const App = () => {
           path="/gms/*"
           element={
             isLoggedIn ? (
-              <GmsTemplate onLogout={handleLogout} />
+              <GmsTemplate onLogout={handleLogout} resetState={()=>setBookingsData(data)}/>
             ) : (
               <Navigate to="/" />
             )
