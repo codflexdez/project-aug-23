@@ -14,6 +14,7 @@ import ReportsPage from "./components/ReportsPage";
 import FormCenterPage from "./components/FormCenterPage";
 import WorkflowPage from "./components/WorkflowPage";
 import LearningCenterPage from "./components/LearningCenterPage";
+// import TemplatePage from "./components/TemplatePage";
 
 
 const App = () => {
@@ -170,6 +171,7 @@ const App = () => {
             }
           />
           <Route path="template" element={<EmailTemplate />} />
+          {/* <Route path="template" element={<TemplatePage />} /> */}
           <Route path="survey-response" element={<SurveyRespons />} />
           <Route path="profiles" element={<ProfilesPage />} />
           <Route path="email-center" element={<EmailCenterPage />} />
