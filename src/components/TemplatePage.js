@@ -18,32 +18,48 @@ const TemplatePage = () => {
 
   const styles = {
     span: {
-      transform: "rotate(25deg)",
+      fontSize: "16px",
     },
-    span2: {
+    dot: {
       fontSize: "10px",
+      position: "absolute",
+      left: "2rem",
     },
-    // section: {
-    //   padding: "8px",
-    //   height: "60vh",
-    // },
-    div: {
-      margin: "auto",
+    section: {
+      height: "100%",
+      display: "flex",
+      flexDirection: "row",
+      flexBasis: "33.3%",
+    },
+    select: {
+      width: "30ch",
     },
     img: {
       width: "100%",
-      height: "100%",
       objectFit: "cover",
+      padding: "8px",
     },
     activeButton: {
+      textTransform: "uppercase",
       color: "var(--text-color_accent)",
       lineHeight: "240%",
-      borderBottom: "3px solid var(--text-color_accent)",
+      borderBottom: "4px solid var(--text-color_accent)",
     },
     dropdown: {
       position: "relative",
+      marginLeft: "auto",
+    },
+    formDiv: {
+      display: "flex",
+      alignItems: "center",
+      position: "relative",
+      gap: "1.625rem",
+      borderBottom: "1px solid var(--border-color)",
+      paddingTop: "1rem",
+      marginRight: "1rem"
     },
   };
+
 
   const [kabab, setKabab] = useState(false);
 
@@ -55,26 +71,35 @@ const TemplatePage = () => {
   return (
     <>
       <section className="email-page">
-        <aside>
+        <aside style={{ flexBasis: "17%", paddingTop: "1.5rem", paddingRight: "1rem" }}>
           <Selector
             options={options}
             selOption={selOption}
             toChangeOpt={toChangeOpt}
-            style={styles.select}
           />
         </aside>
-        <article className="email-form">
-          <div>
+        <article
+          className="email-form-img"
+          style={{
+            paddingTop: "0.375rem",
+            flexBasis: "49.7%",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <div
+            style={styles.formDiv}
+          >
             <label>To</label>
-            <input type="text" />
-            <span className="fa fa-circle" style={styles.span2}></span>
-            <button>Cc</button>
+            <input type="text" style={{ marginRight: "auto" }} />
+            <span className="fa fa-circle" style={styles.dot}></span>
+            <button style={{ marginLeft: "auto", marginRight: "1rem" }}>Cc</button>
           </div>
-          <div>
+          <div style={styles.formDiv}>
             <label>Subject</label>
             <input type="text" placeholder="Offers" />
           </div>
-          <section>
+          <section style={{ overflowY: "scroll", height: "100%", paddingTop: "1rem"}}>
             <img
               src={process.env.PUBLIC_URL + "/img/template-hotel.webp"}
               alt="template-hotel"
@@ -82,9 +107,18 @@ const TemplatePage = () => {
           </section>
         </article>
 
-        <aside>
-          <section>
-            <a href={url} role="button" aria-label="html editor">
+        <aside style={styles.section}>
+          <section
+            style={{
+              padding: "1rem",
+              flexBasis: "6.3%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}
+          >
+            <a href={url} role="button" aria-label="html editor" style={{marginTop: "7rem"}}>
               <span className="fa fa-code" title="edit html"></span>
             </a>
             <a href={url} role="button">
@@ -94,8 +128,20 @@ const TemplatePage = () => {
               <img src={process.env.PUBLIC_URL + "/img/redo.png"} alt="redo" />
             </a>
           </section>
-          <section>
-            <header>
+          <section style={{ flex: "1" }}>
+            <header
+              style={{
+                paddingLeft: "1rem",
+                paddingRight: "8px",
+                paddingTop: "14px",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "3rem",
+                borderBottom: "1px solid var(--border-color)",
+              }}
+            >
               <button
                 onClick={() => {
                   setSettings(true);
@@ -110,8 +156,9 @@ const TemplatePage = () => {
                   setSettings(false);
                   setTest(true);
                 }}
+                style={testvar ? styles.activeButton : {}}
               >
-                Test
+                Email Variables
               </button>
               <div className="dropdown onHover" style={styles.dropdown}>
                 <a
@@ -123,6 +170,8 @@ const TemplatePage = () => {
                   <img
                     src={process.env.PUBLIC_URL + "/img/dots.png"}
                     alt="menu-dropdown"
+                    style={{ width: "28px", display: "flex",
+                    alignItems: "center"}}
                   />
                 </a>
                 {kabab && (
@@ -130,6 +179,7 @@ const TemplatePage = () => {
                     className="dropdown-content opDropdown"
                     data-active="false"
                     aria-label="dropdown"
+                    style={{top:"2.25rem"}}
                   >
                     <a href="#/showVariables" onClick={(e) => showKabab(e)}>
                       Show Variables
@@ -153,27 +203,41 @@ const TemplatePage = () => {
                 )}
               </div>
             </header>
-            <article style={styles.section}>
-              <div style={styles.div}>
-                {settings && (
-                  <img
-                    src={process.env.PUBLIC_URL + "/img/template-setting.png"}
-                    alt="settings"
-                    style={styles.img}
-                  />
-                )}
-                {testvar && (
-                  <img
-                    src={process.env.PUBLIC_URL + "/img/test-mode.png"}
-                    alt="variables"
-                    style={styles.img}
-                  />
-                )}
-              </div>
+            <article style={{ overflowY: "auto", height: "90.5%" }}>
+              {settings && (
+                <img
+                  src={process.env.PUBLIC_URL + "/img/template-setting.png"}
+                  alt="settings"
+                  style={styles.img}
+                />
+              )}
+              {testvar && (
+                <img
+                  src={process.env.PUBLIC_URL + "/img/test-mode.png"}
+                  alt="variables"
+                  style={styles.img}
+                />
+              )}
             </article>
           </section>
 
-          <button>
+          <button className="btn-send"
+            style={{
+              position: "fixed",
+              bottom: "2rem",
+              textTransform: "unset",
+              right: "1rem",
+              padding: "0.625rem 1rem",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              backgroundColor: "var(--bg-primary)",
+              color: "white",
+              border: "0",
+              borderRadius: "0.25rem",
+              fontSize: "medium",
+            }}
+          >
             <span
               className="fa fa-paper-plane-o fa-lg"
               style={styles.span}

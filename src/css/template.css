@@ -1,74 +1,86 @@
 .email-page {
-    display: flex;
-    /* justify-content: space-between; */
-    gap: 0.5rem;
-    max-width: 95vw;
-    min-width: 65vw;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 1rem; */
+  width: 97%;
 }
 
-.email-page>* {
-    display: flex;
-    flex-direction: column;
+.email-page input {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
 }
-.email-page > article section {
-    flex-basis: 40%;
+.email-page input:focus {
+  box-shadow: none;
+}
+
+.email-page button {
+  border: 0;
+  background-color: transparent;
+  font-size: medium;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-color_primary);
+  white-space: nowrap;
 }
 
 .email-page > article img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  object-fit: cover;
 }
 
-.email-page>aside:first-of-type {
-    flex-basis: 20%;
+.email-page > aside > section:first-child img {
+  width: 30px;
 }
 
 .email-page > aside > section:first-of-type {
-    background-color: rgba(239, 239, 239, 0.699);
-    height: 100vh;
-    flex-basis: 10%;
+  background-color: rgba(239, 239, 239, 0.699);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
 }
-.email-page > aside > section:last-of-type {
-   
-    height: 100vh;
-    flex-basis: 23%;
-}
+
+
+
+
 /* Selector styles............................................................. */
 
-
 .select {
-    display: flex;
-    width: 100%;
-    min-width: 18ch;
-    max-width: max-content; 
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  max-width: max-content;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
 }
 
 .email-page .maxWidth22 {
-    max-width: 25ch;
+  width: 100%;
+  position: relative;
+  max-width: max-content;
 }
 
 .email-page .maxWidth22 select {
-    font-size: 22px;
+  font-size: 26px;
+  width: 19ch;
 }
 
 .select {
-    margin-right: auto;
-    padding-left: 0.5rem;
+  margin-right: auto;
+  padding-left: 0.5rem;
 }
 
 
-.select select{
-    width: 100%;
-    appearance: none;
+
+.select select {
+  width: 100%;
+  width: 18ch;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   padding: 0;
-  margin: 0; 
+  margin: 0;
   padding-left: 8px;
   background: none;
   border: none;
@@ -77,18 +89,15 @@
   color: var(--text-color_p);
   z-index: 1;
   font-family: inherit;
-  
 }
-  
+
 .special select {
-    min-width: 15ch !important;
+  min-width: 15ch !important;
 }
 
-
-
-.select select>*{
+.select select > * {
   background: white;
-  color:gray;
+  color: gray;
   font-family: 18px;
   font-size: inherit;
   border: var(--border-color);
@@ -96,74 +105,66 @@
 }
 
 
-.select span {
-    position:absolute; 
-    font-weight: 300; 
-    opacity: 1;
-    right: 1rem;
-    cursor: pointer;
+.email-page .select span {
+    right: 0.01rem;
 }
 
-
 .select span {
-    font-size: 36px !important;
-    color: var(--text-color_p) !important;
+  position: absolute;
+  font-weight: 300;
+  opacity: 1;
+  right: 1rem;
+  cursor: pointer;
 }
 
-
+.select span {
+  font-size: 36px !important;
+  color: var(--text-color_p) !important;
+}
 
 .select select option {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 
 /* dropdown */
 
 .dropbtn {
-    cursor: pointer;
-   
-   
+  cursor: pointer;
 }
-
 
 .email-page header .dropdown-content,
 .dropdown-content {
-    position: absolute;
-    top: 5rem;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--border-color);
-    border-radius: 0.25rem;
-    box-shadow: 0px 1px 5px 0.5px rgba(0, 0, 0, 0.1);
-    width: 10vw;
-    right: 1rem;
-    background-color: white;
-    z-index: 100;
-    
+  position: absolute;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  box-shadow: 0px 1px 5px 0.5px rgba(0, 0, 0, 0.1);
+  width: 10vw;
+  right: 1rem;
+  background-color: white;
+  z-index: 100;
 }
-
 
 .dropdown-content {
-    top: 22%;
+  top: 22%;
 }
 
-
-.email-page > header .dropdown-content>*,
-.dropdown-content>* {
-    padding: 0.5rem;
-    text-decoration: none;
-    color: var(--text-color_buttons);
-    
+.email-page > header .dropdown-content > *,
+.dropdown-content > * {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: var(--text-color_buttons);
 }
-.email-page > header .dropdown-content>*:hover,
-.dropdown-content>*:hover {
-    color: var(--text-color_accent);
-    background-color: var(--bg-link_hover);
+.email-page > header .dropdown-content > *:hover,
+.dropdown-content > *:hover {
+  color: var(--text-color_accent);
+  background-color: var(--bg-link_hover);
 }
 
-
-.email-page > header .dropdown-content>*:not(a:last-of-type),
-.dropdown-content>*:not(a:last-of-type){
-    border-bottom: 1px solid var(--border-color);
+.email-page > header .dropdown-content > *:not(a:last-of-type),
+.dropdown-content > *:not(a:last-of-type) {
+  border-bottom: 1px solid var(--border-color);
 }
-

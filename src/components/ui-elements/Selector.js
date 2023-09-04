@@ -10,7 +10,7 @@ const Selector = ({ options, selOption, toChangeOpt }) => {
 
   return (
     <div className="select maxWidth22">
-    <select id="standard-select" value={selOption} onChange={handleChange}>
+    <select id="standard-select" value={selOption} onChange={handleChange} >
       {options.map((option) => (
         <option key={option.key} value={option.value}>
           {option.value}
