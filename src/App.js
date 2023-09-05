@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
-import GmsTemplate from "./components/gmsTemplate"; // Import GmsTemplate
+import GmsTemplate from "./components/gmsTemplate"; // this is GmsTemplate that has the header and sidebar 
 import PendingEmailsPage from "./components/PendingEmailsPage";
 import SurveysPage from "./components/SurveysPage";
 import HomePage from "./components/HomePage";
 import data from "./data.json";
-// import EmailTemplate from "./components/EmailTemplate";
+// import EmailTemplate from "./components/EmailTemplate";   // this component was replace by TemplatePage down the list
 import SurveyRespons from "./components/SurveyResponse.js";
 import ProfilesPage from "./components/ProfilesPage";
 import EmailCenterPage from "./components/EmailCenterPage";
@@ -22,7 +22,6 @@ const App = () => {
     localStorage.getItem("isLoggedIn") === "true"
   );
 
-  // Booking and Survey functionality
   const [selectAll, setSelectAll] = useState(false);
   const [individualCheckboxes, setIndividualCheckboxes] = useState({});
   const [checkboxCount, setCheckboxCount] = useState(0);
@@ -31,16 +30,15 @@ const App = () => {
 
   const handleCheckAll = () => {
     const newCheckedBoxObj = {};
-
     if (!selectAll) {
       data.forEach((item) => {
         newCheckedBoxObj[item.id] = true;
       });
     }
-
     setSelectAll(!selectAll);
     setIndividualCheckboxes(newCheckedBoxObj);
   };
+
 
   const handleSelfCheck = (itemId) => {
     setIndividualCheckboxes((prevState) => ({
@@ -49,7 +47,7 @@ const App = () => {
     }));
   };
 
-   // Function to handle hiding a specific row
+   // Function to handle hiding a specific row (<li> with data)
    const hideRow = (id) => {
     const updatedData = bookingsData.map((item) =>
       item.id === id ? { ...item, isHidden: true } : item
@@ -58,6 +56,7 @@ const App = () => {
   };
 
 
+  // Function to delete the <li> from table that is related to the checkbox with the id
   const deleteEntries = () => {
     const newData = bookingsData.filter(
       (item) => !individualCheckboxes[item.id]
@@ -115,9 +114,9 @@ const App = () => {
 
  
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route
+        <Route exact
           path="/"
           element={
             isLoggedIn ? (
@@ -171,7 +170,8 @@ const App = () => {
               />
             }
           />
-          {/* <Route path="template" element={<EmailTemplate />} /> */}
+          {/* Inseart the new route hear to load it from from GmsTemplate */}
+          {/* <Route path="template" element={<EmailTemplate />} /> */ } {/*encoment this line and comment TemplatePage*/}
           <Route path="template" element={<TemplatePage />} />
           <Route path="survey-response" element={<SurveyRespons />} />
           <Route path="profiles" element={<ProfilesPage />} />
@@ -182,7 +182,7 @@ const App = () => {
           <Route path="learning-center" element={<LearningCenterPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
