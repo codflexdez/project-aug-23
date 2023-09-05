@@ -93,7 +93,7 @@ const TemplatePage = () => {
             <label>To</label>
             <input type="text" style={{ marginRight: "auto" }} />
             <span className="fa fa-circle" style={styles.dot}></span>
-            <button style={{ marginLeft: "auto", marginRight: "1rem" }}>Cc</button>
+            <button style={{ marginLeft: "auto", marginRight: "1rem", textTransform: "unset" }}>Cc</button>
           </div>
           <div style={styles.formDiv}>
             <label>Subject</label>
@@ -119,13 +119,13 @@ const TemplatePage = () => {
             }}
           >
             <a href={url} role="button" aria-label="html editor" style={{marginTop: "7rem"}}>
-              <span className="fa fa-code" title="edit html"></span>
+              <span className="fa fa-code" title="edit html" style={{fontSize: "26px", color: "var(--text-color_primary)"}}></span>
             </a>
             <a href={url} role="button">
-              <img src={process.env.PUBLIC_URL + "/img/undo.png"} alt="undo" />
+              <img src={process.env.PUBLIC_URL + "/img/undo.png"} alt="undo" style={{color: "var(--text-color_primary)"}}/>
             </a>
             <a href={url} role="button">
-              <img src={process.env.PUBLIC_URL + "/img/redo.png"} alt="redo" />
+              <img src={process.env.PUBLIC_URL + "/img/redo.png"} alt="redo" style={{color: "var(--text-color_primary)"}} />
             </a>
           </section>
           <section style={{ flex: "1" }}>
