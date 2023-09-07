@@ -21,12 +21,24 @@ const UpgradePage = ({
   const [selOption, setSelOption] = useState("");
   const [isFilter, setFilter] = useState(false);
   const [isInfo, setInfo] = useState(false);
+  const [guestData, setData] = useState(data);
 
   const location = useLocation();
 
   const openInfo = (e) => {
     e.preventDefault();
     setInfo(true);
+  };
+
+  // Function to update Guest status (item.status)
+  const newGuestStatus = (itemId, newStatus) => {
+    const updatedData = guestData.map((item) => {
+      if (item.id === itemId) {
+        return { ...item, status: newStatus };
+      }
+      return item;
+    });
+    setData(updatedData);
   };
 
   return (
@@ -109,12 +121,13 @@ const UpgradePage = ({
             </li>
             {/* The rest of the items in the list are the actual data */}
             <BookingList
-              data={data}
+              data={guestData}
               individualCheckboxes={individualCheckboxes}
               handleSelfCheck={handleSelfCheck}
               onOpen={openInfo}
               hideRow={hideRow}
               location={location}
+              guestStatus={newGuestStatus}
             />
           </ol>
           <Footer />

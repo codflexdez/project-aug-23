@@ -550,11 +550,10 @@
   box-shadow: var(--border-focus_style);
 }
 
+
+
+/* hover action for the x and checkmark on pending upgrades page */
 .isHover:hover {
-  background-color: var(--bg-link_hover);
-  /* border-radius: 50%; */
-  display: block;
-  width: 30px;
-  height: 30px;
-  margin: auto;
+  background-color: var(--bg-link_hover) !important;
+  border-radius: 50%;
 }

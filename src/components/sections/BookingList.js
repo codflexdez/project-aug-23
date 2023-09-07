@@ -8,6 +8,7 @@ const BookingList = ({
   onOpen,
   hideRow,
   location,
+  guestStatus
 }) => {
   const url = "";
   const upgradesPage = location.pathname === "/gms/upgrade";
@@ -15,8 +16,18 @@ const BookingList = ({
     blockSz: {
       width: "20px",
     },
-    link: {
-      textDecoration: "none"
+    btn: {
+      backgroundColor: "transparent",
+      border: "0",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: "24px",
+      height: "24px",
+      fontSize: "18px",
+      color: "gray",
+      transition: "color 0.35s",
+      cursor:"pointer"
     },
     isHidden: {
       display: "none"
@@ -131,12 +142,12 @@ const BookingList = ({
                 </div>
             ) : (
               <div style={item.status === "Close" ? styles.isHidden : {}} >
-                <Link to={url}  style={{ ...styles.blockSz, ...styles.link }}>
-                  <span className="isHover" aria-label="approve">&#10003;</span>
-                </Link>
-                <Link to={url} style={{ ...styles.blockSz, ...styles.link }}>
-                  <span className="isHover" aria-label="reject">&#x2715;</span>
-                </Link>
+                <button onClick={()=>guestStatus(item.id, "Close")} className="isHover" aria-label="approve" style={styles.btn}>
+                 &#10003;
+                </button>
+                <button onClick={()=>guestStatus(item.id, "Close")} className="isHover" aria-label="reject" style={styles.btn}>
+                  &#x2715;
+                </button>
               </div>
             )}
         </li>

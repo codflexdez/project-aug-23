@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
+import data from "./data.json";
 import LoginPage from "./components/LoginPage";
-import GmsTemplate from "./components/gmsTemplate"; // this is GmsTemplate that has the header and sidebar 
+import GmsTemplate from "./components/gmsTemplate"; // this is GmsTemplate that has sidebar navigation
 import PendingEmailsPage from "./components/PendingEmailsPage";
 import SurveysPage from "./components/SurveysPage";
 import HomePage from "./components/HomePage";
-import data from "./data.json";
-// import EmailTemplate from "./components/EmailTemplate";   // this component was replace by TemplatePage down the list
 import SurveyRespons from "./components/SurveyResponse.js";
 import EmailCenterPage from "./components/EmailCenterPage";
 import ReportsPage from "./components/ReportsPage";
@@ -16,7 +15,6 @@ import LearningCenterPage from "./components/LearningCenterPage";
 import TemplatePage from "./components/TemplatePage";
 import UpgradePage from "./components/UpgradePage";
 import GuestsProfile from "./components/GuestsProfilePage";
-
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -32,14 +30,18 @@ const App = () => {
   const handleCheckAll = () => {
     const newCheckedBoxObj = {};
     if (!selectAll) {
-      data.forEach((item) => {
-        newCheckedBoxObj[item.id] = true;
+      bookingsData.forEach((item) => {
+        if (!item.isHidden) {
+          // Only count visible checkboxes
+          newCheckedBoxObj[item.id] = true;
+        }
       });
     }
-    setSelectAll(!selectAll);
+    setSelectAll(!selectAll); // toggles the selectAll
     setIndividualCheckboxes(newCheckedBoxObj);
+    const updatedCount = checkedBoxCount(newCheckedBoxObj);
+    setCheckboxCount(updatedCount);
   };
-
 
   const handleSelfCheck = (itemId) => {
     setIndividualCheckboxes((prevState) => ({
@@ -48,40 +50,40 @@ const App = () => {
     }));
   };
 
-   // Function to handle hiding a specific row (<li> with data)
-   const hideRow = (id) => {
+  // Function to handle hiding a specific row (<li> with data)
+  const hideRow = (id) => {
     const updatedData = bookingsData.map((item) =>
       item.id === id ? { ...item, isHidden: true } : item
     );
     setBookingsData(updatedData);
   };
 
-
   // Function to delete the <li> from table that is related to the checkbox with the id
   const deleteEntries = () => {
     const newData = bookingsData.filter(
       (item) => !individualCheckboxes[item.id]
     );
-
+    // Recalculate checkedBoxesCount based on the updated newData
+    const updatedCount = checkedBoxCount(
+      newData.reduce((acc, item) => {   // acc is accumulator object
+        acc[item.id] = true;            // accumulates the itemId of items in newData 
+        return acc;                     // that are not selected for deletion
+      }, {})     // initially acc is an empty object
+    );
     setBookingsData(newData);
     localStorage.setItem("bookingsData", JSON.stringify(newData));
-
-    const newCheckboxes = { ...individualCheckboxes };
-    newData.forEach((item) => {
-      newCheckboxes[item.id] = false;
-      setShowBanner(false);
-    });
-
-    setIndividualCheckboxes(newCheckboxes);
-
-    // Recalculate checkedBoxesCount based on the updated individualCheckboxes
-    const updatedCount = checkedBoxCount(newCheckboxes);
     setCheckboxCount(updatedCount);
+    setShowBanner(false);
+    // Clear individualCheckboxes state for deleted items
+    setIndividualCheckboxes({});
   };
 
+
+  // A utility function to count the number of selected checkboxes (or the remaining boxes)
   const checkedBoxCount = (boxState) => {
     return Object.values(boxState).filter(Boolean).length;
   };
+
 
   useEffect(() => {
     // Update checkboxCount whenever individualCheckboxes changes
@@ -96,11 +98,10 @@ const App = () => {
 
   useEffect(() => {
     const storedBookingsData = localStorage.getItem("data");
-
     if (storedBookingsData) {
       setBookingsData(JSON.parse(storedBookingsData));
     }
-  }, []); // Only run this effect on component mount
+  }, []);
 
   // Function to handle successful login
   const handleLogin = () => {
@@ -113,11 +114,11 @@ const App = () => {
     localStorage.removeItem("isLoggedIn");
   };
 
- 
   return (
     <HashRouter>
       <Routes>
-        <Route exact
+        <Route
+          exact
           path="/"
           element={
             isLoggedIn ? (
@@ -132,7 +133,10 @@ const App = () => {
           path="/gms/*"
           element={
             isLoggedIn ? (
-              <GmsTemplate onLogout={handleLogout} resetState={()=>setBookingsData(data)}/>
+              <GmsTemplate
+                onLogout={handleLogout}
+                resetState={() => setBookingsData(data)}
+              />
             ) : (
               <Navigate to="/" />
             )
@@ -176,19 +180,13 @@ const App = () => {
             element={
               <UpgradePage
                 data={bookingsData}
-                // showBanner={showBanner}
-                 individualCheckboxes={individualCheckboxes}
-                // handleCheckAll={handleCheckAll}
-                 handleSelfCheck={handleSelfCheck}
-                // selectAll={selectAll}
-                // checkboxCount={checkboxCount}
-                // deleteEntries={deleteEntries}
-                 hideRow={hideRow}
+                individualCheckboxes={individualCheckboxes}
+                handleSelfCheck={handleSelfCheck}
+                hideRow={hideRow}
               />
             }
           />
           {/* Inseart the new route hear to load it from from GmsTemplate */}
-          {/* <Route path="template" element={<EmailTemplate />} /> */ } {/*encoment this line and comment TemplatePage*/}
           <Route path="template" element={<TemplatePage />} />
           <Route path="survey-response" element={<SurveyRespons />} />
           <Route path="email-center" element={<EmailCenterPage />} />
