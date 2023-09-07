@@ -15,13 +15,23 @@ const BookingList = ({
     blockSz: {
       width: "20px",
     },
+    link: {
+      textDecoration: "none"
+    },
+    isHidden: {
+      display: "none"
+    }
   };
 
   return (
     <>
       {data.map((item) => (
         <li
-          className={!upgradesPage ?( `item-container ${item.isHidden ? "hidden" : ""}`) : (`item-container update-container`)}
+          className={
+            !upgradesPage
+              ? `item-container ${item.isHidden ? "hidden" : ""}`
+              : `item-container update-container`
+          }
           key={item.id}
           style={
             individualCheckboxes[item.id]
@@ -87,32 +97,48 @@ const BookingList = ({
               </div>
             </>
           )}
-          <div>
-            <Link to={url} className="open-info" style={styles.blockSz}>
-              <img
-                src={process.env.PUBLIC_URL + "/img/info.png"}
-                alt="info"
-                onClick={onOpen}
-              />
-            </Link>
-            <Link
-              to="../template"
-              className="show-content"
-              style={styles.blockSz}
-            >
-              <img src={process.env.PUBLIC_URL + "/img/show.png"} alt="show" />
-            </Link>
-           {!upgradesPage && ( <Link
-              to={url}
-              className="delete-content"
-              onClick={(e) => {
-                e.preventDefault();
-                hideRow(item.id);
-              }}
-            >
-              <span className="fa fa-trash-o" alt="delete"></span>
-            </Link>)}
-          </div>
+          {!upgradesPage ? (<div>
+          
+            
+              
+                <Link to={url} className="open-info" style={styles.blockSz}>
+                  <img
+                    src={process.env.PUBLIC_URL + "/img/info.png"}
+                    alt="info"
+                    onClick={onOpen}
+                  />
+                </Link>
+                <Link
+                  to="../template"
+                  className="show-content"
+                  style={styles.blockSz}
+                >
+                  <img
+                    src={process.env.PUBLIC_URL + "/img/show.png"}
+                    alt="show"
+                  />
+                </Link>
+                <Link
+                  to={url}
+                  className="delete-content"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    hideRow(item.id);
+                  }}
+                >
+                  <span className="fa fa-trash-o" alt="delete"></span>
+                </Link>
+                </div>
+            ) : (
+              <div style={item.status === "Close" ? styles.isHidden : {}} >
+                <Link to={url}  style={{ ...styles.blockSz, ...styles.link }}>
+                  <span className="isHover" aria-label="approve">&#10003;</span>
+                </Link>
+                <Link to={url} style={{ ...styles.blockSz, ...styles.link }}>
+                  <span className="isHover" aria-label="reject">&#x2715;</span>
+                </Link>
+              </div>
+            )}
         </li>
       ))}
     </>

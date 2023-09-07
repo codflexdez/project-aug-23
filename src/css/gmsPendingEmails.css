@@ -539,10 +539,22 @@
   box-shadow: none;
 }
 
+
+/* actions */
+
 .option-banner button:hover {
   background-color: var(--bg-color_accent);
 }
 
 .option-banner button:active {
   box-shadow: var(--border-focus_style);
+}
+
+.isHover:hover {
+  background-color: var(--bg-link_hover);
+  /* border-radius: 50%; */
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: auto;
 }
