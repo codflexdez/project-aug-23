@@ -6,8 +6,7 @@
 @import url("./loginPage.css");
 @import url("./gmsPage.css");
 @import url("./gmsPendingEmails.css");
-/* @import url("./emailTemplate.css"); */ /*if you replaced the TemplatePage with EmailTemplate encoment this import*/
-@import url("./template.css");
+@import url("./template.css"); 
 
 /* Import Font Awesome CSS */
 /*Currently, I'm using the link to fontawesome from index.html*/

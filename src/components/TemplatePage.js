@@ -24,6 +24,7 @@ const TemplatePage = () => {
       fontSize: "10px",
       position: "absolute",
       left: "2rem",
+      color: "var(--text-color_primary)"
     },
     section: {
       height: "100%",
@@ -119,13 +120,13 @@ const TemplatePage = () => {
             }}
           >
             <a href={url} role="button" aria-label="html editor" style={{marginTop: "7rem"}}>
-              <span className="fa fa-code" title="edit html" style={{fontSize: "26px", color: "var(--text-color_primary)"}}></span>
+              <span className="fa fa-code" title="edit html" style={{fontSize: "26px", color: "gray"}}></span>
             </a>
             <a href={url} role="button">
-              <img src={process.env.PUBLIC_URL + "/img/undo.png"} alt="undo" style={{color: "var(--text-color_primary)"}}/>
+              <img src={process.env.PUBLIC_URL + "/img/undo.png"} alt="undo" />
             </a>
             <a href={url} role="button">
-              <img src={process.env.PUBLIC_URL + "/img/redo.png"} alt="redo" style={{color: "var(--text-color_primary)"}} />
+              <img src={process.env.PUBLIC_URL + "/img/redo.png"} alt="redo" />
             </a>
           </section>
           <section style={{ flex: "1" }}>
@@ -171,7 +172,7 @@ const TemplatePage = () => {
                     src={process.env.PUBLIC_URL + "/img/dots.png"}
                     alt="menu-dropdown"
                     style={{ width: "28px", display: "flex",
-                    alignItems: "center"}}
+                    alignItems: "center", filter: "opacity(0.5)"}}
                   />
                 </a>
                 {kabab && (

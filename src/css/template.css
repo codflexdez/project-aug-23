@@ -32,6 +32,7 @@
 
 .email-page > aside > section:first-child img {
   width: 30px;
+  filter: opacity(0.5);
 }
 
 .email-page > aside > section:first-of-type {
