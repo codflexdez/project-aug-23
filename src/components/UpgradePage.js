@@ -24,6 +24,7 @@ const UpgradePage = ({
   const [guestData, setData] = useState(data);
 
   const location = useLocation();
+  const title = location.state || "";
 
   const openInfo = (e) => {
     e.preventDefault();
@@ -130,7 +131,7 @@ const UpgradePage = ({
               guestStatus={newGuestStatus}
             />
           </ol>
-          <Footer />
+          <Footer title={title}/>
         </section>
       </section>
     </>

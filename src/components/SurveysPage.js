@@ -30,6 +30,11 @@ const SurveysPage = ({
   
 
   const location = useLocation();
+  
+  const title = location.state || "";
+
+
+
   return (
     <>
       <QstFilterModal isOpen={isQstFilter} location={location} onClose={() => setQstFilter(false)}/>
@@ -118,7 +123,7 @@ const SurveysPage = ({
               hideRow={hideRow}
             />
           </ol>
-          <Footer />
+          <Footer title={title}/>
         </section>
       </section>
     </>

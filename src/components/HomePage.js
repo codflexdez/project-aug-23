@@ -16,32 +16,31 @@ const HomePage = () => {
 
   const parameterObj = {
     profile72: {
-      fromTo: "1 - 20 of 72 Pending Emails",
+      fromTo: "1 - 20 of 72 Guests",
       emails: "20",
       page: "4",
     },
     profile24: {
-      fromTo: "1 - 20 of 24 Pending Emails",
+      fromTo: "1 - 20 of 24 Guests",
       emails: "20",
       page: "2",
     },
     profile16: {
-      fromTo: "1 - 16 of 16 Pending Emails",
+      fromTo: "1 - 16 of 16 Guests",
       emails: "20",
       page: "1",
     },
     profile8: {
-      fromTo: "1 - 8 of 8 Pending Emails",
+      fromTo: "1 - 8 of 8 Guests",
       emails: "20",
       page: "1",
     },
   };
 
-  //console.log(parameterObj.profile72);
 
   return (
     <>
-      {/* Your main content goes here  */}
+      {/* main content goes here  */}
       <section className="main-content">
         <h2>Amadeus Hotels & Resort</h2>
         <div>

@@ -6,10 +6,12 @@ const FormCenterPage = () => {
       width: "100%",
       height: "100%",
       objectFit: "fill",
+      objectPosition: "top"
     },
     section: {
       width: "97vw",
-      height: "91vh",
+      height: "91",
+      
     },
   };
 
@@ -17,7 +19,7 @@ const FormCenterPage = () => {
     <>
       <section style={styles.section}>
         <img
-          src={process.env.PUBLIC_URL + "/img/form-center-figma.png"}
+          src={process.env.PUBLIC_URL + "/img/form-center.png"}
           alt="response-details"
           style={styles.img}
         />

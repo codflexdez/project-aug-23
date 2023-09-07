@@ -1,12 +1,12 @@
 import React from "react";
 
-const Footer = ({ profile, styles }) => {
+const Footer = ({ profile, styles, title }) => {
   
   
   return (
     <footer style={styles && styles.footer}>
       <section className="pagination" style={styles && styles.flex}>
-        <span>{profile ? profile.fromTo : "1 - 5 of 5 Pending Emails"}</span>
+        {!title ? (<span>{profile ? profile.fromTo : "1 - 5 of 5 Emails"}</span>) : (<span>{"1 - 5 of 5 " + title}</span>)}
         <div>
           <span></span>
           <span className="fa fa-angle-left"></span>
@@ -17,7 +17,7 @@ const Footer = ({ profile, styles }) => {
           <span></span>
         </div>
         <div>
-          <span>Emails per page</span>
+          {!title ? (<span>{ profile ? "Guests" : "Emails"} per page</span>) : (<span>{ title } per page</span>)}
           <button className="pagesNb">
           {profile ? profile.emails : "10"}
             <span className="fa fa-caret-down"></span>

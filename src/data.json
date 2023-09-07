@@ -15,9 +15,9 @@
     "toRoom": "Standard",
     "status": "Open",
     "los": "7",
-    "previousR": "700",
-    "extraR": "300",
-    "historyR": "1500",
+    "previousR": "$700.15",
+    "extraR": "$300.21",
+    "historyR": "$1500.75",
     "nbStays": "7"
   },
   {
@@ -36,9 +36,9 @@
     "toRoom": "Deluxe",
     "status": "Open",
     "los": "9",
-    "previousR": "900",
-    "extraR": "200",
-    "historyR": "1700",
+    "previousR": "$900.02",
+    "extraR": "$200.27",
+    "historyR": "$1700.53",
     "nbStays": "9"
   },
   {
@@ -57,9 +57,9 @@
     "toRoom": "Balcony room",
     "status": "Close",
     "los": "3",
-    "previousR": "350",
-    "extraR": "150",
-    "historyR": "1500",
+    "previousR": "$350.65",
+    "extraR": "$150.72",
+    "historyR": "$1500.85",
     "nbStays": "3"
   },
   {
@@ -78,9 +78,9 @@
     "toRoom": "Standard",
     "status": "Open",
     "los": "10",
-    "previousR": "1100",
-    "extraR": "400",
-    "historyR": "1650",
+    "previousR": "$1100.12",
+    "extraR": "$400.05",
+    "historyR": "$1650.45",
     "nbStays": "10"
   },
   {
@@ -99,9 +99,9 @@
     "toRoom": "Presidential",
     "status": "Open",
     "los": "5",
-    "previousR": "2500",
-    "extraR": "700",
-    "historyR": "5700",
+    "previousR": "$2500.13",
+    "extraR": "$700.49",
+    "historyR": "$5700.64",
     "nbStays": "5"
   }
 ]

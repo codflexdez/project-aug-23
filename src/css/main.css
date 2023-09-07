@@ -2,7 +2,7 @@
 
 /* Import components CSS */
 
-@import url("./styles.css");
+@import url("./styles.css");     /*containes :root styles; typography, and general input styles */
 @import url("./loginPage.css");
 @import url("./gmsPage.css");
 @import url("./gmsPendingEmails.css");
@@ -11,3 +11,6 @@
 /* Import Font Awesome CSS */
 /*Currently, I'm using the link to fontawesome from index.html*/
 /* @import url("fontawesome-4.7/css/font-awesome.min.css"); */
+
+
+/* Inline styling is implemented on certain pages */
