@@ -11,7 +11,14 @@
     "confirmation": "Confirmation",
     "checkIn": "2022-12-29",
     "checkOut": "2023-01-02",
-    "timestamp": "2023-01-02 04:34"
+    "timestamp": "2023-01-02 04:34",
+    "toRoom": "Standard",
+    "status": "Open",
+    "los": "7",
+    "previousR": "700",
+    "extraR": "300",
+    "historyR": "1500",
+    "nbStays": "7"
   },
   {
     "id": "28792857",
@@ -25,7 +32,14 @@
     "confirmation": "Confirmation",
     "checkIn": "2022-12-29",
     "checkOut": "2023-01-02",
-    "timestamp": "2023-01-02 04:34"
+    "timestamp": "2023-01-02 04:34",
+    "toRoom": "Deluxe",
+    "status": "Open",
+    "los": "9",
+    "previousR": "900",
+    "extraR": "200",
+    "historyR": "1700",
+    "nbStays": "9"
   },
   {
     "id": "28782755",
@@ -39,7 +53,14 @@
     "confirmation": "Reminder",
     "checkIn": "2022-12-29",
     "checkOut": "2023-01-02",
-    "timestamp": "2023-01-02 04:34"
+    "timestamp": "2023-01-02 04:34",
+    "toRoom": "Balcony room",
+    "status": "Close",
+    "los": "3",
+    "previousR": "350",
+    "extraR": "150",
+    "historyR": "1500",
+    "nbStays": "3"
   },
   {
     "id": "287835544",
@@ -53,7 +74,14 @@
     "confirmation": "Reminder",
     "checkIn": "2022-12-29",
     "checkOut": "2023-01-02",
-    "timestamp": "2023-01-02 04:34"
+    "timestamp": "2023-01-02 04:34",
+    "toRoom": "Standard",
+    "status": "Open",
+    "los": "10",
+    "previousR": "1100",
+    "extraR": "400",
+    "historyR": "1650",
+    "nbStays": "10"
   },
   {
     "id": "287954575",
@@ -67,6 +95,13 @@
     "confirmation": "Confirmation",
     "checkIn": "2022-12-29",
     "checkOut": "2023-01-02",
-    "timestamp": "2023-01-02 04:34"
+    "timestamp": "2023-01-02 04:34",
+    "toRoom": "Presidential",
+    "status": "Open",
+    "los": "5",
+    "previousR": "2500",
+    "extraR": "700",
+    "historyR": "5700",
+    "nbStays": "5"
   }
 ]

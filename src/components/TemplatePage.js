@@ -101,7 +101,7 @@ const TemplatePage = () => {
           </div>
           <section style={{ overflowY: "scroll", height: "100%", paddingTop: "1rem"}}>
             <img
-              src={process.env.PUBLIC_URL + "/img/template-hotel.webp"}
+              src={process.env.PUBLIC_URL + "/img/Email.png"}
               alt="template-hotel"
             />
           </section>
@@ -236,6 +236,7 @@ const TemplatePage = () => {
               border: "0",
               borderRadius: "0.25rem",
               fontSize: "medium",
+              cursor: "pointer"
             }}
           >
             <span

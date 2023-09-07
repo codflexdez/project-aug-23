@@ -132,7 +132,8 @@
 
 /* Grid section container styling */
 
-.item-container {
+.item-container
+{
   display: grid;
   grid-template-columns: 3em 3fr 7fr 3fr 5fr 3.5fr 2.5fr;
   border-bottom: 1px solid var(--border-color);
@@ -140,12 +141,12 @@
   transition: color 0.02s ease-in-out;
 }
 
-/* Hover effect for table list */
-/* .item-container:hover:not(.item-container:first-of-type) {
-  background-color: rgba(239, 239, 239, 0.699);
-} */
 
+.update-container {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr 3fr 2.5fr 2fr 1.5fr 2fr;
 
+}
 
 
 .item-container > * {
@@ -236,10 +237,15 @@
 .guest-contacts {
   --column-width-min: 5em;
 }
+.update-container .state {
+  --column-width-min: 2em !important;
+}
 
 .state {
   --column-width-min: 5em;
 }
+
+
 
 /* GMS Pending Emails Footer */
 
@@ -265,7 +271,7 @@
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.47);
-  z-index: 1;
+  z-index: 5;
 }
 
 .modal {
@@ -275,7 +281,7 @@
   top: 8vh;
   bottom: 8vh;
   border: 1px solid var(--border-color);
-  z-index: 2;
+  z-index: 7;
   background-color: white;
   display: flex;
   flex-direction: column;

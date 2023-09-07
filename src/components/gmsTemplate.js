@@ -31,14 +31,14 @@ const GmsTemplate = ({onLogout, resetState}) => {
     },
     {
       "id": 4,
-      "title": "Surveys",
+      "title": "Survey Results",
       "url": "surveys",
       "icon": "fa fa-folder-open-o"
     },
     {
       "id": 5,
-      "title": "",
-      "url": "url3",
+      "title": "Pending Upgrades",
+      "url": "upgrade",
       "icon": "fa fa-file-o"
     },
     {
@@ -87,7 +87,7 @@ const GmsTemplate = ({onLogout, resetState}) => {
         <div>
           <span onClick={resetState} style={{cursor: "pointer"}}>Amadeus</span>
           <i className="fa fa-angle-down fa-lg"></i>
-          <a href={url} onClick={onLogout}>John Dow</a>
+          <a href={url} onClick={onLogout}>John Doe</a>
         </div>
       </header>
 

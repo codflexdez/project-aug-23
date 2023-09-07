@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import ResetSection from "./ResetEmailSection";
-import MfaSection from "./MfaSection";
-import AlertBox from "./AlertBox";
+import ResetSection from "./sections/ResetEmailSection";
+import MfaSection from "./sections/MfaSection";
+import AlertBox from "./ui-elements/AlertBox";
 
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState("");

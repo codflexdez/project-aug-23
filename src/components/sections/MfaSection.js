@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AlertBox from "./AlertBox";
+import AlertBox from "../ui-elements/AlertBox";
 
 const MfaSection = ({onLogin, styles}) => {
   const [userCode, setUserCode] = useState("");

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import OptionBanner from "./OptionBanner";
-import Footer from "./Footer";
-import BookingList from "./BookingList";
+import OptionBanner from "./ui-elements/OptionBanner";
+import Footer from "./ui-elements/Footer";
+import BookingList from "./sections/BookingList";
 import Selector from "./ui-elements/Selector";
 import FilterModal from "./ui-elements/FilterModal";
 import InfoModal from "./ui-elements/InfoModal";
@@ -44,7 +44,7 @@ const PendingEmailsPage = ({
           <OptionBanner checkboxCount={checkboxCount} deleteEntries={deleteEntries} location={location}/>
         ) : (
           <header className="table-gms-header">
-            <div><h2>Pending emails:</h2><Selector options={options} selOption={selOption} toChangeOpt={(option) => setSelOption(option)}/></div>
+            <div><h2>Pending Emails:</h2><Selector options={options} selOption={selOption} toChangeOpt={(option) => setSelOption(option)}/></div>
             <aside>
               <button onClick={() => setFilter(true)} id="filterBtn" type="button">
                 <img
@@ -102,6 +102,7 @@ const PendingEmailsPage = ({
               handleSelfCheck={handleSelfCheck}
               onOpen={openInfo}
               hideRow={hideRow}
+              location={location}
             />
           </ol>
           <Footer />

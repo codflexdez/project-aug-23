@@ -8,13 +8,14 @@ import HomePage from "./components/HomePage";
 import data from "./data.json";
 // import EmailTemplate from "./components/EmailTemplate";   // this component was replace by TemplatePage down the list
 import SurveyRespons from "./components/SurveyResponse.js";
-import ProfilesPage from "./components/ProfilesPage";
 import EmailCenterPage from "./components/EmailCenterPage";
 import ReportsPage from "./components/ReportsPage";
 import FormCenterPage from "./components/FormCenterPage";
 import WorkflowPage from "./components/WorkflowPage";
 import LearningCenterPage from "./components/LearningCenterPage";
 import TemplatePage from "./components/TemplatePage";
+import UpgradePage from "./components/UpgradePage";
+import GuestsProfile from "./components/GuestsProfilePage";
 
 
 const App = () => {
@@ -170,16 +171,32 @@ const App = () => {
               />
             }
           />
+          <Route
+            path="upgrade"
+            element={
+              <UpgradePage
+                data={bookingsData}
+                // showBanner={showBanner}
+                 individualCheckboxes={individualCheckboxes}
+                // handleCheckAll={handleCheckAll}
+                 handleSelfCheck={handleSelfCheck}
+                // selectAll={selectAll}
+                // checkboxCount={checkboxCount}
+                // deleteEntries={deleteEntries}
+                 hideRow={hideRow}
+              />
+            }
+          />
           {/* Inseart the new route hear to load it from from GmsTemplate */}
           {/* <Route path="template" element={<EmailTemplate />} /> */ } {/*encoment this line and comment TemplatePage*/}
           <Route path="template" element={<TemplatePage />} />
           <Route path="survey-response" element={<SurveyRespons />} />
-          <Route path="profiles" element={<ProfilesPage />} />
           <Route path="email-center" element={<EmailCenterPage />} />
           <Route path="reports" element={<ReportsPage />} />
           <Route path="form-center" element={<FormCenterPage />} />
           <Route path="workflow" element={<WorkflowPage />} />
           <Route path="learning-center" element={<LearningCenterPage />} />
+          <Route path="profiles" element={<GuestsProfile />} />
         </Route>
       </Routes>
     </HashRouter>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ResetEmailSection = () => {
+const ResetSection = () => {
 
 return (
     <>
@@ -21,4 +21,4 @@ return (
 
 };
 
-export default ResetEmailSection;
+export default ResetSection;

@@ -40,7 +40,14 @@
   border-right: 1px solid var(--border-color);
 }
 
+.email-page aside > button:hover {
+  background-color: var(--bg-btn_hover) !important;
+}
 
+/* .email-page aside > button:focus {
+  border-color: var(--border-color_accent) !important;
+  box-shadow: 0px 4px 4px -0.1rem rgba(0, 123, 255, 0.25) !important;
+} */
 
 
 /* Selector styles............................................................. */

@@ -55,6 +55,7 @@
   overflow-y: auto;
   transition: 0.15s ease-in-out;
   overflow-x: hidden; 
+  z-index: 4;
 }
 
 
@@ -199,6 +200,16 @@
 
 .main-content >section:first-of-type span {
   font-size: clamp(1rem, 1.25vw, 1.5rem);
+ 
+}
+
+.main-content >section:first-of-type > a{
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.main-content >section:first-of-type h3:hover {
+  color: var(--text-color_accent);
 }
 
 .main-content h3 {

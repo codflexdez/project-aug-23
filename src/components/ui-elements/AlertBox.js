@@ -1,6 +1,6 @@
 import React from "react";
 
-const AlerBox = ({ message, onClose, closeAlert }) => {
+const AlertBox = ({ message, onClose, closeAlert }) => {
   return (
     <div className="alert-box" id="alert" role="alert">
       <span>&#8861;</span>
@@ -9,4 +9,4 @@ const AlerBox = ({ message, onClose, closeAlert }) => {
     </div>
   );
 };
-export default AlerBox;
+export default AlertBox;

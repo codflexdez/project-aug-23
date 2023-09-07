@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import Footer from "./Footer";
-import OptionBanner from "./OptionBanner";
-import SurveyList from "./SurveyList";
+import Footer from "./ui-elements/Footer";
+import OptionBanner from "./ui-elements/OptionBanner";
+import SurveyList from "./sections/SurveyList";
 import Selector from "./ui-elements/Selector";
 import QstFilterModal from "./ui-elements/QstFilterModal";
 
@@ -32,7 +32,7 @@ const SurveysPage = ({
   const location = useLocation();
   return (
     <>
-      <QstFilterModal isOpen={isQstFilter} onClose={() => setQstFilter(false)}/>
+      <QstFilterModal isOpen={isQstFilter} location={location} onClose={() => setQstFilter(false)}/>
       { isQstFilter ? (<div className="modal-overlay"></div>) : ""}
       <section className="table-gms">
         {showBanner ? (

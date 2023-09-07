@@ -26,7 +26,7 @@ const FilterModal = ({isOpen, onClose}) => {
       </header>
       <section>
         <div>
-          <h4>Emails</h4>
+          <h4>Email</h4>
           <div>
             <span>Enter Email</span>
           </div>
