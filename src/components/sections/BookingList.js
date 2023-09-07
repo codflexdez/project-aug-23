@@ -8,7 +8,7 @@ const BookingList = ({
   onOpen,
   hideRow,
   location,
-  guestStatus
+  guestStatus,
 }) => {
   const url = "";
   const upgradesPage = location.pathname === "/gms/upgrade";
@@ -27,11 +27,11 @@ const BookingList = ({
       fontSize: "18px",
       color: "gray",
       transition: "color 0.35s",
-      cursor:"pointer"
+      cursor: "pointer",
     },
     isHidden: {
-      display: "none"
-    }
+      display: "none",
+    },
   };
 
   return (
@@ -62,7 +62,11 @@ const BookingList = ({
             </div>
           )}
           <div>
-            <label htmlFor={item.id}>{item.name}</label>
+            {!upgradesPage ? (
+              <label htmlFor={item.id}>{item.name}</label>
+            ) : (
+              <label>{item.name}</label>
+            )}
             <span>{item.id}</span>
           </div>
           {/* Group cordinates related information */}
@@ -108,48 +112,56 @@ const BookingList = ({
               </div>
             </>
           )}
-          {!upgradesPage ? (<div>
-          
-            
-              
-                <Link to={url} className="open-info" style={styles.blockSz}>
-                  <img
-                    src={process.env.PUBLIC_URL + "/img/info.png"}
-                    alt="info"
-                    onClick={onOpen}
-                  />
-                </Link>
-                <Link
-                  to="../template"
-                  className="show-content"
-                  style={styles.blockSz}
-                >
-                  <img
-                    src={process.env.PUBLIC_URL + "/img/show.png"}
-                    alt="show"
-                  />
-                </Link>
-                <Link
-                  to={url}
-                  className="delete-content"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    hideRow(item.id);
-                  }}
-                >
-                  <span className="fa fa-trash-o" alt="delete"></span>
-                </Link>
-                </div>
-            ) : (
-              <div style={item.status === "Close" ? styles.isHidden : {}} >
-                <button onClick={()=>guestStatus(item.id, "Close")} className="isHover" aria-label="approve" style={styles.btn}>
-                 &#10003;
-                </button>
-                <button onClick={()=>guestStatus(item.id, "Close")} className="isHover" aria-label="reject" style={styles.btn}>
-                  &#x2715;
-                </button>
-              </div>
-            )}
+          {!upgradesPage ? (
+            <div>
+              <Link to={url} className="open-info" style={styles.blockSz}>
+                <img
+                  src={process.env.PUBLIC_URL + "/img/info.png"}
+                  alt="info"
+                  onClick={onOpen}
+                />
+              </Link>
+              <Link
+                to="../template"
+                className="show-content"
+                style={styles.blockSz}
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "/img/show.png"}
+                  alt="show"
+                />
+              </Link>
+              <Link
+                to={url}
+                className="delete-content"
+                onClick={(e) => {
+                  e.preventDefault();
+                  hideRow(item.id);
+                }}
+              >
+                <span className="fa fa-trash-o" alt="delete"></span>
+              </Link>
+            </div>
+          ) : (
+            <div style={item.status === "Close" ? styles.isHidden : {}}>
+              <button
+                onClick={() => guestStatus(item.id, "Close")}
+                className="isHover"
+                aria-label="approve"
+                style={styles.btn}
+              >
+                &#10003;
+              </button>
+              <button
+                onClick={() => guestStatus(item.id, "Close")}
+                className="isHover"
+                aria-label="reject"
+                style={styles.btn}
+              >
+                &#x2715;
+              </button>
+            </div>
+          )}
         </li>
       ))}
     </>

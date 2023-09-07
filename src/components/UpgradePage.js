@@ -80,7 +80,7 @@ const UpgradePage = ({
             {/* The first list item is the header of the table */}
             <li className="item-container update-container">
               <div>
-                <label htmlFor="checkbox-main">Name</label>
+                <label>Name</label>
                 <i className="fa fa-sort"></i>
               </div>
               {/* Enclose semanticAlly similar attributes as a div hierarchy */}
