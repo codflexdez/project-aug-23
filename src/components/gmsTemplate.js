@@ -6,7 +6,6 @@ const GmsTemplate = ({ onLogout, resetState }) => {
   let url = "";
   const { pathname } = useLocation();
 
-
   const tabNav = [
     {
       id: 1,
