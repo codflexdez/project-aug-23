@@ -34,7 +34,7 @@ const GmsTemplate = ({ onLogout, resetState }) => {
       title: "Survey Results",
       url: "surveys",
       icon: "fa fa-folder-open-o",
-      state: "Results",
+      state: "Surveys",
     },
     {
       id: 5,
