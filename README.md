@@ -1,4 +1,4 @@
-## Interactive Maquette GMS
+## Interactive Prototype GMS Web App
 
 For instance this a single page application that provide a client side routing with the static data.
 
